@@ -1,6 +1,6 @@
 import React, { useState} from "react";
 
-export default function GeneralInfo( { generalInfo, setGeneralInfo }){
+export default function GeneralInfo( { generalInfo, setGeneralInfo }) {
     const [isEditing, setIsEditing] = useState(true);
 
     function handleChange(e) {
@@ -48,13 +48,13 @@ export default function GeneralInfo( { generalInfo, setGeneralInfo }){
                     <button type="submit">Submit information</button>
                 </form>
             ) : (
-                <div className="subGeneralInfo">
+                <div className="submittedGeneralInfo">
                     <p>Name: {generalInfo.name}</p>
                     <p>Email: {generalInfo.email}</p>
                     <p>Phone no: {generalInfo.phoneNo}</p>
                     <button onClick={handleEdit}></button>
                 </div>
-            )}
+            )};
         </div>
-    )
-}
+    );
+};
