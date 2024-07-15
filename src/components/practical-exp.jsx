@@ -1,5 +1,4 @@
 import React, {useState} from "react";
-import EducationalInfo from "./educational-info";
 
 export default function practicalExp({ practicalExp, setPracticalExp }) {
     const [isEditing, setIsEditing] = useState(true);
