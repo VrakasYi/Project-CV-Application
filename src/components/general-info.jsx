@@ -43,7 +43,7 @@ export default function GeneralInfo( { generalInfo, setGeneralInfo }) {
                         name="phoneNo"
                         value={generalInfo.phoneNo}
                         onChange={handleChange}
-                        palceholder="Phone number"
+                        palceholder="12345678"
                     />
                     <button type="submit">Submit information</button>
                 </form>
@@ -52,9 +52,9 @@ export default function GeneralInfo( { generalInfo, setGeneralInfo }) {
                     <p>Name: {generalInfo.name}</p>
                     <p>Email: {generalInfo.email}</p>
                     <p>Phone no: {generalInfo.phoneNo}</p>
-                    <button onClick={handleEdit}></button>
+                    <button onClick={handleEdit}>Edit</button>
                 </div>
-            )};
+            )}
         </div>
     );
 };

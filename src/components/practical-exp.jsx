@@ -4,7 +4,7 @@ export default function practicalExp({ practicalExp, setPracticalExp }) {
     const [isEditing, setIsEditing] = useState(true);
 
     function handleChange(e) {
-        const { name, value} = e.target;
+        const { name, value } = e.target;
         setPracticalExp( {...practicalExp, [name]: value} );
     };
 
@@ -42,7 +42,7 @@ export default function practicalExp({ practicalExp, setPracticalExp }) {
                         onChange={handleChange}
                         placeholder="Duration"
                     />
-                    <button type="submit"></button>
+                    <button type="submit">Submit experience</button>
                 </form>
                 
             ) : (
@@ -50,9 +50,9 @@ export default function practicalExp({ practicalExp, setPracticalExp }) {
                     <p>Company: {practicalExp.company}</p>
                     <p>Posituion: {practicalExp.position}</p>
                     <p>Duration: {practicalExp.tenure}</p>
-                    <button onClick={handleEdit}></button>
+                    <button onClick={handleEdit}>Edit</button>
                 </div> 
-            )};
+            )}
         </div>
     );
 };

@@ -36,22 +36,22 @@ export default function EducationalInfo( { educationalInfo, setEducationalInfo }
                         placeholder="Grade achieved"
                     />
                     <input
-                    typeof="date"
-                    name="date"
-                    value={educationalInfo.date}
-                    onChange={handleChange}
-                    placeholder="Date"
+                        typeof="date"
+                        name="date"
+                        value={educationalInfo.date}
+                        onChange={handleChange}
+                        placeholder="Date"
                     />
-                    <button type="submit"></button>    
+                    <button type="submit">Submit education</button>    
                 </form>
             ) : (
                 <div className="submittedEducationalInfo">
                     <p>School: {educationalInfo.school}</p>
                     <p>Grade: {educationalInfo.grade}</p>
                     <p>Date of graduation: {educationalInfo.date}</p>
-                    <button onClick={handleEdit}></button>
+                    <button onClick={handleEdit}>Edit</button>
                 </div>
-            )};
+            )}
         </div>
     );
 };

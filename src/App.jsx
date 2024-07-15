@@ -5,7 +5,7 @@ import CV from './components/cv'
 function App() {
   return (
     <div className="app">
-      CV
+      
       <CV />
     </div>
   )
