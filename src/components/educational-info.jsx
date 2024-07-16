@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import '../styles/info.css'
 
 export default function EducationalInfo( { educationalInfo, setEducationalInfo } ) {
     const [isEditing, setIsEditing] = useState(true);
@@ -21,27 +22,36 @@ export default function EducationalInfo( { educationalInfo, setEducationalInfo }
         <div className="educational-inputs">
             {isEditing ? (
                 <form onSubmit={handleSubmit}>
+                    <div className="input-div">
+                    School
                     <input
                         type="text"
                         name="school"
                         value={educationalInfo.school}
                         onChange={handleChange}
-                        placeholder="Name of school attended"
+                        // placeholder="Name of school attended"
                     />
+                    </div>
+                    <div className="input-div">
+                    Final grade
                     <input
                         type="text" 
                         name="grade"
                         value={educationalInfo.grade}
                         onChange={handleChange}
-                        placeholder="Grade achieved"
+                        // placeholder="Grade achieved"
                     />
+                    </div>
+                    <div className="input-div">
+                    Year of graduation
                     <input
                         typeof="date"
                         name="date"
                         value={educationalInfo.date}
                         onChange={handleChange}
-                        placeholder="Date"
+                        // placeholder="Date"
                     />
+                    </div>
                     <button type="submit">Submit education</button>    
                 </form>
             ) : (

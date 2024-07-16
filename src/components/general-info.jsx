@@ -1,4 +1,5 @@
 import React, { useState} from "react";
+import '../styles/info.css'
 
 export default function GeneralInfo( { generalInfo, setGeneralInfo }) {
     const [isEditing, setIsEditing] = useState(true);
@@ -21,30 +22,38 @@ export default function GeneralInfo( { generalInfo, setGeneralInfo }) {
         <div className="general-inputs">
             {isEditing ? (
                 <form onSubmit={handleSubmit}>
-
+                    <div className="input-div">
+                    Name
                     <input 
                         type="text"
                         name="name"
                         value={generalInfo.name}
                         onChange={handleChange}
-                        placeholder="Full Name"
+                        // placeholder="Full Name"
                         required
                     />
+                    </div>
+                    <div className="input-div">
+                    Email
                     <input
                         type="email"
                         name="email"
                         value={generalInfo.email}
                         onChange={handleChange}
-                        placeholder="Email"
+                        // placeholder="Email"
                         required
                     />
+                    </div>
+                    <div className="input-div">
+                    Phone number
                     <input
                         type="tel"
                         name="phoneNo"
                         value={generalInfo.phoneNo}
                         onChange={handleChange}
-                        palceholder="12345678"
+                        // palceholder="12345678"
                     />
+                    </div>
                     <button type="submit">Submit information</button>
                 </form>
             ) : (
