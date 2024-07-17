@@ -1,0 +1,15 @@
+.input-div {
+    justify-content: space-between;
+    display: flex;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+}
+
+form > button {
+    background-color: #e5e5e5;
+}

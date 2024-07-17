@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import '../styles/info.css'
+import '../styles/input-div.css'
 
 export default function practicalExp({ practicalExp, setPracticalExp }) {
     const [isEditing, setIsEditing] = useState(true);
