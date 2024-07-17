@@ -7,7 +7,8 @@ import PracticalExp from "./practical-exp";
 export default function CV() {
     const [generalInfo, setGeneralInfo] = useState( { name: "", email: "", phoneNo: "" } );
     const [educationalInfo, setEducationalInfo] = useState( { school: "", grade: "", date: "" } );
-    const [practicalExp, setPracticalExp] = useState( { company: "", position: "", responsibilities: "",  tenure: ""} )
+    const [practicalExp, setPracticalExp] = useState([]);
+    // const [practicalExp, setPracticalExp] = useState( { company: "", position: "",  tenure: ""} )
 
     return (
         <div className="cv">
