@@ -18,6 +18,10 @@ export default function practicalExp({ practicalExp, setPracticalExp }) {
         setIsEditing(false);
     };
 
+    function handleMoreExp() {
+        
+    };
+
     return (
         <div className="educational-inputs">
             {isEditing ? (
@@ -61,6 +65,7 @@ export default function practicalExp({ practicalExp, setPracticalExp }) {
                     <p>Posituion: {practicalExp.position}</p>
                     <p>Duration: {practicalExp.tenure}</p>
                     <button onClick={handleEdit}>Edit</button>
+                    <button onClick={handleMoreExp}>Add more experience</button>
                 </div> 
             )}
         </div>
