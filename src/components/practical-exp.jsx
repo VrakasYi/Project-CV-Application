@@ -3,10 +3,11 @@ import '../styles/input-div.css'
 
 export default function practicalExp({ practicalExp, setPracticalExp }) {
     const [isEditing, setIsEditing] = useState(true);
+    const [newExp, setNewExp] = useState({ company: "", position: "", tenure: ""});
 
     function handleChange(e) {
         const { name, value } = e.target;
-        setPracticalExp( {...practicalExp, [name]: value} );
+        setNewExp( {...newExp, [name]: value} );
     };
 
     function handleEdit() {
@@ -15,6 +16,8 @@ export default function practicalExp({ practicalExp, setPracticalExp }) {
 
     function handleSubmit(e) {
         e.preventDefault();
+        setPracticalExp([...practicalExp, newExp]);
+        setNewExp({ company: "", position: "", tenure: ""});
         setIsEditing(false);
     };
 
@@ -31,7 +34,7 @@ export default function practicalExp({ practicalExp, setPracticalExp }) {
                     <input
                         type="text"
                         name="company"
-                        value={practicalExp.company}
+                        value={newExp.company}
                         onChange={handleChange}
                         // placeholder="Company name"
                     />
@@ -41,7 +44,7 @@ export default function practicalExp({ practicalExp, setPracticalExp }) {
                     <input
                         type="text"
                         name="position"
-                        value={practicalExp.position}
+                        value={newExp.position}
                         onChange={handleChange}
                         // placeholder="Position"
                     />
@@ -51,7 +54,7 @@ export default function practicalExp({ practicalExp, setPracticalExp }) {
                     <input
                         type="text"
                         name="tenure"
-                        value={practicalExp.tenure}
+                        value={newExp.tenure}
                         onChange={handleChange}
                         // placeholder="Duration"
                     />
@@ -60,13 +63,18 @@ export default function practicalExp({ practicalExp, setPracticalExp }) {
                 </form>
                 
             ) : (
-                <div className="submittedPracticalExP">
-                    <p>Company: {practicalExp.company}</p>
-                    <p>Posituion: {practicalExp.position}</p>
-                    <p>Duration: {practicalExp.tenure}</p>
-                    <button onClick={handleEdit}>Edit</button>
-                    <button onClick={handleMoreExp}>Add more experience</button>
-                </div> 
+                <div>
+                    {practicalExp.map((exp, index) => {
+                        <div key={index} className="submittedPracticalExP">
+                            <p>Company: {exp.company}</p>
+                            <p>Posituion: {exp.position}</p>
+                            <p>Duration: {exp.tenure}</p>
+                            <button onClick={handleEdit(index)}>Edit</button>
+                            <button onclick={handleDelete(index)}>Delete</button>
+                        </div> 
+                    })}
+                        <button onClick={handleMoreExp}>Add more experience</button>
+                </div>
             )}
         </div>
     );
