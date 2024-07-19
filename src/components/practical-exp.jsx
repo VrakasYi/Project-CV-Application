@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import '../styles/input-div.css'
 
-export default function practicalExp({ practicalExp, setPracticalExp }) {
+export default function PracticalExp({ practicalExp, setPracticalExp }) {
     const [isEditing, setIsEditing] = useState(true);
     const [newExp, setNewExp] = useState({ company: "", position: "", tenure: ""});
 
@@ -10,19 +10,37 @@ export default function practicalExp({ practicalExp, setPracticalExp }) {
         setNewExp( {...newExp, [name]: value} );
     };
 
-    function handleEdit() {
+    function handleEdit(index) {
+        setNewExp(practicalExp[index]);
         setIsEditing(true);
     };
 
     function handleSubmit(e) {
         e.preventDefault();
+        console.log("Submitting new experience:", newExp);  // Debug log
+
         setPracticalExp([...practicalExp, newExp]);
+        // if (isEditing) {
+        //     // Update existing experience
+        //     const updatedExp = practicalExp.map((exp, index) =>
+        //         index === practicalExp.indexOf(newExp) ? newExp : exp
+        //     );
+        //     setPracticalExp(updatedExp);
+        // } else {
+        //     // Add new experience
+        //     setPracticalExp([...practicalExp, newExp]);
+        // }
         setNewExp({ company: "", position: "", tenure: ""});
         setIsEditing(false);
     };
 
     function handleMoreExp() {
-        
+        setIsEditing(true);
+    };
+
+    function handleDelete(index) {
+        console.log("Deleting experience at index:", index);  // Debug log
+        setPracticalExp(practicalExp.filter((_, i) => i !== index));
     };
 
     return (
@@ -64,15 +82,15 @@ export default function practicalExp({ practicalExp, setPracticalExp }) {
                 
             ) : (
                 <div>
-                    {practicalExp.map((exp, index) => {
+                    {practicalExp.map((exp, index) => (
                         <div key={index} className="submittedPracticalExP">
                             <p>Company: {exp.company}</p>
-                            <p>Posituion: {exp.position}</p>
+                            <p>Position: {exp.position}</p>
                             <p>Duration: {exp.tenure}</p>
-                            <button onClick={handleEdit(index)}>Edit</button>
-                            <button onclick={handleDelete(index)}>Delete</button>
+                            <button onClick={() => handleEdit(index)}>Edit</button>
+                            <button onClick={() => handleDelete(index)}>Delete</button>
                         </div> 
-                    })}
+                    ))}
                         <button onClick={handleMoreExp}>Add more experience</button>
                 </div>
             )}
