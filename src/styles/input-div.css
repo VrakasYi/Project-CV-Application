@@ -13,3 +13,18 @@ form {
 form > button {
     background-color: #e5e5e5;
 }
+
+.submittedInfo > button {
+    background-color: #e5e5e5;
+}
+
+.subPractical > button {
+    background-color: #e5e5e5;
+}
+
+.subPractical {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}

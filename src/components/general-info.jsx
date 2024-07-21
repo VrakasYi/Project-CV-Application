@@ -57,7 +57,7 @@ export default function GeneralInfo( { generalInfo, setGeneralInfo }) {
                     <button type="submit">Submit information</button>
                 </form>
             ) : (
-                <div className="submittedGeneralInfo">
+                <div className="submittedInfo">
                     <p>Name: {generalInfo.name}</p>
                     <p>Email: {generalInfo.email}</p>
                     <p>Phone no: {generalInfo.phoneNo}</p>

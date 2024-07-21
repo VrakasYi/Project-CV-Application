@@ -81,9 +81,9 @@ export default function PracticalExp({ practicalExp, setPracticalExp }) {
                 </form>
                 
             ) : (
-                <div>
+                <div className="subPractical">
                     {practicalExp.map((exp, index) => (
-                        <div key={index} className="submittedPracticalExP">
+                        <div key={index} className="submittedInfo">
                             <p>Company: {exp.company}</p>
                             <p>Position: {exp.position}</p>
                             <p>Duration: {exp.tenure}</p>

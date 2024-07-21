@@ -55,7 +55,7 @@ export default function EducationalInfo( { educationalInfo, setEducationalInfo }
                     <button type="submit">Submit education</button>    
                 </form>
             ) : (
-                <div className="submittedEducationalInfo">
+                <div className="submittedInfo">
                     <p>School: {educationalInfo.school}</p>
                     <p>Grade: {educationalInfo.grade}</p>
                     <p>Date of graduation: {educationalInfo.date}</p>
