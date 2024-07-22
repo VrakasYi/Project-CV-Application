@@ -87,8 +87,10 @@ export default function PracticalExp({ practicalExp, setPracticalExp }) {
                             <p>Company: {exp.company}</p>
                             <p>Position: {exp.position}</p>
                             <p>Duration: {exp.tenure}</p>
+                            <div className="buttons">
                             <button onClick={() => handleEdit(index)}>Edit</button>
                             <button onClick={() => handleDelete(index)}>Delete</button>
+                            </div>
                         </div> 
                     ))}
                         <button onClick={handleMoreExp}>Add more experience</button>
