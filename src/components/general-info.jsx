@@ -1,5 +1,5 @@
 import React, { useState} from "react";
-import '../styles/input-div.css'
+import '../styles/information.css'
 
 export default function GeneralInfo( { generalInfo, setGeneralInfo }) {
     const [isEditing, setIsEditing] = useState(true);
